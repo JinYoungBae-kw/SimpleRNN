@@ -15,6 +15,8 @@ class SimpleRNN(nn.Module):
         self.hidden_to_output = nn.Linear(hidden_size, output_size)
         nn.init.xavier_uniform_(self.input_to_hidden.weight)
         nn.init.zeros_(self.input_to_hidden.bias)
+        nn.init.xavier_uniform_(self.hidden_to_output.weight)
+        nn.init.zeros_(self.hidden_to_output.bias)
 
         # tanh 함수
         self.tanh = nn.Tanh()
